@@ -7,10 +7,9 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-
+class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource{
+  
     var items: Array<Post> = Array()
-    
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,45 +20,45 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     // MARK: - Method
     func initViews(){
-        
-        tableView.dataSource = self
         tableView.delegate = self
-        addNavigation()
+        tableView.dataSource = self
+        setNavigationBar()
         
-        items.append(Post(name: "Dwayne Johnson", time: "Few seconds ago", content: "Congratulations on your birthday! Wishing you truly fabulous day.", profileImage: "profileImage", postPhoto: "postImage"))
-        items.append(Post(name: "Donald J.Trump", time: "A week ago", content: "An exceptional president for an ordinary time - Egypt independent", profileImage: "profileImage2", postPhoto: "postImage2"))
-        items.append(Post(name: "Dwayne Johnson", time: "Few seconds ago", content: "Congratulations on your birthday! Wishing you truly fabulous day.", profileImage: "profileImage", postPhoto: "postImage"))
-        items.append(Post(name: "Donald J.Trump", time: "A week ago", content: "An exceptional president for an ordinary time - Egypt independent", profileImage: "profileImage2", postPhoto: "postImage2"))
+        items.append(Post(fullName: "Sherzod", user_img: "im_person1", post_img: "im_post1"))
+        items.append(Post(fullName: "Malika", user_img: "im_person2", post_img: "im_post2"))
     }
     
-    func addNavigation(){
-      
-        title = "Table View"
+    func setNavigationBar(){
+        let camera = UIImage(named: "ic_camera")
+        let send = UIImage(named: "ic_send")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: camera, style: .plain, target: self, action: #selector(leftTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: send, style: .plain, target: self, action: #selector(rightTapped))
+        title = "Instagram"
+    }
+    // MARK: - Action
+    
+    @objc func leftTapped(){
+        
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+    @objc func rightTapped(){
+        
     }
+    
+    // MARK: - Table View
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[indexPath.row]
         let cell = Bundle.main.loadNibNamed("PostTableViewCell", owner: self, options: nil)?.first as! PostTableViewCell
-        
-        cell.nameLabel.text = item.name
-        cell.contentLabel.text = item.content
-        cell.profileImageView.image = UIImage(named: item.profileImage!)
-        cell.timeLabel.text = item.time
-        cell.postImageView.image = UIImage(named: item.postPhoto!)
+        cell.fullnameLabel.text = item.fullName
+        cell.profileImageView.image = UIImage(named: item.user_img!)
+        cell.postImageView.image = UIImage(named: item.post_img!)
         
         return cell
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        return 600
     }
-    
-    // MARK: - Action
-    @IBAction func onLoggedOut(_ sender: Any) {
-        sceneDelegate().callSignInController()
-    }
-    
-
 }

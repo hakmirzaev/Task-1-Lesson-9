@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="InstaPDP" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="exm-EB-SzK" id="dZR-Aa-oJ9"/>
+                <outlet property="tableView" destination="ZZE-qo-oAV" id="wV3-r6-3Lt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,35 +19,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="exm-EB-SzK">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZZE-qo-oAV">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbc-mc-1S6">
-                    <rect key="frame" x="334" y="44" width="80" height="35"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="35" id="ae7-y5-Fuy"/>
-                        <constraint firstAttribute="width" constant="80" id="gLY-V5-CDR"/>
-                    </constraints>
-                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Log out">
-                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="onLoggedOut:" destination="-1" eventType="touchUpInside" id="hSa-gY-rI3"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="exm-EB-SzK" secondAttribute="bottom" id="Dhj-ee-s5X"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="exm-EB-SzK" secondAttribute="trailing" id="Sb0-Uy-CUQ"/>
-                <constraint firstItem="gbc-mc-1S6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="knr-zj-eU4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gbc-mc-1S6" secondAttribute="trailing" id="rOh-2i-rCZ"/>
-                <constraint firstItem="exm-EB-SzK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tbp-Lg-PFc"/>
-                <constraint firstItem="exm-EB-SzK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="w6t-XR-YjP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZZE-qo-oAV" secondAttribute="trailing" id="F4O-mu-Zjl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZZE-qo-oAV" secondAttribute="bottom" id="OtD-Du-9bk"/>
+                <constraint firstItem="ZZE-qo-oAV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="eIP-H5-Aoj"/>
+                <constraint firstItem="ZZE-qo-oAV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mHS-Rk-FeK"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="77.678571428571431"/>
         </view>
